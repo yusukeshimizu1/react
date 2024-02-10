@@ -6,10 +6,10 @@ const RadioButton = (props) => {
   
   return (
     <>
-			<div className="diaryRadioButton">
+      <div className="diaryRadioButton">
         {Const.CONDITIONS.map((value, index) => {
           return (
-					  <React.Fragment key={index}>
+            <React.Fragment key={index}>
               <label key="_{index}">
                 <input
                   type="radio"
@@ -19,11 +19,11 @@ const RadioButton = (props) => {
                   onChange={(e) => props.handleValueChange(e)}
                 />
               </label>
-					    <img key="img_{index}" src={value} with="40" height="40"></img>
-					  </React.Fragment>
+              <img key="img_{index}" src={value} with="40" height="40"></img>
+            </React.Fragment>
           );
         })}
-			</div>
+      </div>
     </>
   );
 };

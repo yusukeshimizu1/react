@@ -19,7 +19,7 @@ const CreateDiary = () => {
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({"title": title, "content": content, "conditionType": Const.getConditionValue(condition)})
     };
-		await fetch(Const.API_URL, requestOptions)
+    await fetch(Const.API_URL, requestOptions)
     navigate("/");
   };
 

@@ -17,18 +17,18 @@ const UpdateDiary = () => {
   };
 
   useEffect(() => {
-		getDiary()
-	}, []);
+    getDiary()
+  }, []);
 
   const getDiary = async () => {
-	  await fetch(Const.API_URL + "/" + params.id, { method: "GET" })
-			.then((res) => res.json())
-			.then((data) => {
+    await fetch(Const.API_URL + "/" + params.id, { method: "GET" })
+      .then((res) => res.json())
+      .then((data) => {
         setTitle(data.title);
         setContent(data.content);
         setCreateDatetime(data.createDatetime);
         setCondition(Const.CONDITIONS[data.conditionType - 1])
-		});
+      });
   };
 
   const updateDiary = async (id) => {
@@ -37,7 +37,7 @@ const UpdateDiary = () => {
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({"id": id, "title": title, "content": content, "createDatetime": createDatetime, "conditionType": Const.getConditionValue(condition)})
     };
-		await fetch(Const.API_URL + "/" + id, requestOptions)
+    await fetch(Const.API_URL + "/" + id, requestOptions)
     navigate("/");
   };
 
