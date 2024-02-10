@@ -5,6 +5,7 @@ import { faHouse, faFilePen } from '@fortawesome/free-solid-svg-icons';
 import "./Navbar.css";
 
 const Navbar = () => {
+  
   return (
     <nav>
       <Link to="/">
