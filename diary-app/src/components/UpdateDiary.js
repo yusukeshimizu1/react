@@ -1,9 +1,9 @@
-import "./Diary.css";
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router";
+import { useNavigate } from 'react-router-dom';
 import Const from "../Const.js"
 import RadioButton from "./RadioButton";
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useParams } from "react-router";
+import "./Diary.css";
 
 const UpdateDiary = () => {
   const [title, setTitle] = useState('');
@@ -21,7 +21,7 @@ const UpdateDiary = () => {
   }, []);
 
   const getDiary = async () => {
-    await fetch(Const.API_URL + "/" + params.id, { method: "GET" })
+    await fetch(Const.DIARY_API_URL + "/" + params.id, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         setTitle(data.title);
@@ -37,7 +37,7 @@ const UpdateDiary = () => {
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({"id": id, "title": title, "content": content, "createDatetime": createDatetime, "conditionType": Const.getConditionValue(condition)})
     };
-    await fetch(Const.API_URL + "/" + id, requestOptions)
+    await fetch(Const.DIARY_API_URL + "/" + id, requestOptions)
     navigate("/");
   };
 

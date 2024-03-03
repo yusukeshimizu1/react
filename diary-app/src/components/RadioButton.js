@@ -1,6 +1,6 @@
-import "./Diary.css";
 import Const from "../Const.js"
 import React from "react";
+import "./Diary.css";
 
 const RadioButton = (props) => {
   

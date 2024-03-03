@@ -1,18 +1,13 @@
-import "./Home.css"
-import Const from "../Const.js"
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from 'react-router';
+import Const from "../Const.js"
+import "./Home.css"
 
-const Home = () => {
-  const [diaries, setDiaries] = useState([]);
+const Home = (props) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(Const.API_URL, { method: "GET" })
-      .then((res) => res.json())
-      .then((data) => {
-        setDiaries(data);
-      });
+    props.handleOrderChange();
   }, []);
 
   const handleUpdate = async (id) => {
@@ -20,12 +15,8 @@ const Home = () => {
   }
 
   const handleDelete = async (id) => {
-    fetch(Const.API_URL + "/" + id, { method: "DELETE" })
-      .then((res) => res.json())
-      .then((data) => {
-        setDiaries(data);
-      });
-    window.location.href = "/";
+    await fetch(Const.DIARY_API_URL + "/" + id, { method: "DELETE" })
+    props.handleOrderChange();
   }
 
   const handleToDate=(date)=>{
@@ -46,9 +37,10 @@ const Home = () => {
     return date;
   }
 
+
   return (
     <div className="homePage">
-      {diaries.map((diary, index) => {
+      {props.diaries.map((diary, index) => {
         return (
           <React.Fragment key={index}>
             <div className="diaryContents" key={diary.id}>

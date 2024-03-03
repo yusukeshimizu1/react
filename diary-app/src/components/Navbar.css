@@ -13,10 +13,23 @@ nav a {
     transition: all 0.3s;
 }
 
-nav a:hover {
-    color: cadetblue;
-}
-
 nav a svg {
     margin-right: 5px;
+}
+
+nav label {
+    text-decoration: none;
+    color: white;
+}
+
+.displayOrder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.selectBox {
+    justify-content: center;
+    align-items: center;
 }

@@ -1,8 +1,8 @@
-import "./Diary.css";
-import Const from "../Const.js"
-import RadioButton from "./RadioButton";
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Const from "../Const.js"
+import RadioButton from "./RadioButton";
+import "./Diary.css";
 
 const CreateDiary = () => {
   const [title, setTitle] = useState('');
@@ -19,7 +19,7 @@ const CreateDiary = () => {
       headers:{'Content-Type': 'application/json'},
       body: JSON.stringify({"title": title, "content": content, "conditionType": Const.getConditionValue(condition)})
     };
-    await fetch(Const.API_URL, requestOptions)
+    await fetch(Const.DIARY_API_URL, requestOptions)
     navigate("/");
   };
 
