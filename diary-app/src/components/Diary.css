@@ -1,0 +1,97 @@
+.diaryPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.diaryContainer2 {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    gap: 10px;
+    padding: 0px 40px;
+    box-shadow: 8px 10px 15px -5px #777777;
+}
+
+.diaryContainer {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+    gap: 10px;
+    padding: 0px 40px;
+    box-shadow: 8px 10px 15px -5px #777777;
+}
+
+.diaryContainer h1 {
+    margin: 0;
+}
+
+.diaryContainer input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    padding: 0px 4px;
+}
+
+.diaryContainer textarea {
+    width: 100%;
+    height: 120px;
+    outline: none;
+    padding: 7px;
+}
+
+.submitButton {
+    padding: 10px 0;
+    background-color: #3d77a5;
+    border: none;
+    box-shadow: 8px 10px 15px -5px #777777;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.submitButton:hover {
+    transform: translateY(5px);
+    box-shadow: none;
+}
+
+.diaryRadioButton {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+}
+
+input[type="radio"] {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    vertical-align: -2px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+  }
+  
+  input[type="radio"]:checked:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #000;
+    content: '';
+  }

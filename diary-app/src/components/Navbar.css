@@ -1,0 +1,35 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #acacac;
+    gap: 45px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+nav a svg {
+    margin-right: 5px;
+}
+
+nav label {
+    text-decoration: none;
+    color: white;
+}
+
+.displayOrder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.selectBox {
+    justify-content: center;
+    align-items: center;
+}
